@@ -214,3 +214,17 @@ footer a{color:var(--rust6)}
   .nav.open .sub a{padding:.85em 0;font-size:.82rem}
   .nav.open nav a.book{display:inline-block;margin-top:.9rem;padding:.75em 1.4em}
 }
+
+/* ===== Sundays hero (20261111): left-aligned, place as fact line, next Sunday first ===== */
+.hero{justify-content:flex-start;text-align:left}
+.hero .in{width:100%;max-width:var(--wrap);margin:0 auto}
+.hero .in>*{max-width:720px}
+.hero .btns{justify-content:flex-start}
+.hero h1 em{font-style:normal}
+.hero h1,.hero .one,.hero-next{text-shadow:0 1px 18px rgba(20,8,4,.45)}
+.hero-place{display:inline-flex;align-items:center;gap:.5em;font-family:'Tenor Sans',serif;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(.95rem,1.6vw,1.15rem);color:var(--parchment);padding:0 0 .45em;border-bottom:1px solid rgba(225,201,169,.6);margin:0 0 1.1rem}
+.hero .rail{margin-bottom:1.5rem}
+.hero-next{margin:0 0 1.5rem}
+.hero-kicker{font-family:'Tenor Sans',serif;text-transform:uppercase;letter-spacing:.2em;font-size:.78rem;color:var(--sand);margin:0 0 .4em}
+.hero-next-title{font-family:'Tenor Sans',serif;font-size:clamp(1.12rem,2.1vw,1.45rem);line-height:1.25;margin:0;color:var(--parchment)}
+@media (max-width:760px){.hero .rail{letter-spacing:.16em;font-size:.8rem}.hero .btns{gap:10px;flex-wrap:wrap}.hero .btns .btn{padding:1.05em 1.05em;font-size:.86rem}}
