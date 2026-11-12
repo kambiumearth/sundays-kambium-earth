@@ -201,7 +201,7 @@ footer a{color:var(--rust6)}
 /* Site menu: GLOBAL component, keep identical in every Kambium repo. Menu button at 900px and below */
 .menu-btn{display:none}
 @media (max-width:900px){
-  .menu-btn{display:inline-flex;align-items:center;min-height:44px;background:none;border:1.5px solid var(--bark);color:var(--bark);border-radius:999px;padding:.5em 1.15em;font-family:'Tenor Sans',serif;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;cursor:pointer}
+  .menu-btn{display:inline-flex;align-items:center;margin-left:auto;min-height:44px;background:none;border:1.5px solid var(--bark);color:var(--bark);border-radius:999px;padding:.5em 1.15em;font-family:'Tenor Sans',serif;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;cursor:pointer}
   .nav nav>ul{display:none}
   .nav.open .menu-btn{background:var(--bark);color:var(--parchment)}
   .nav.open nav{position:absolute;top:100%;left:0;right:0;z-index:70;background:var(--parchment);box-shadow:0 12px 24px rgba(64,24,16,.16);padding:6px var(--pad) 20px;max-height:calc(100vh - var(--nav-h));overflow-y:auto}
@@ -221,10 +221,19 @@ footer a{color:var(--rust6)}
 .hero .in>*{max-width:720px}
 .hero .btns{justify-content:flex-start}
 .hero h1 em{font-style:normal}
-.hero h1,.hero .one,.hero-next{text-shadow:0 1px 18px rgba(20,8,4,.45)}
+.hero h1,.hero .one{text-shadow:0 1px 18px rgba(20,8,4,.45)}
 .hero-place{display:inline-flex;align-items:center;gap:.5em;font-family:'Tenor Sans',serif;text-transform:uppercase;letter-spacing:.14em;font-size:clamp(.95rem,1.6vw,1.15rem);color:var(--parchment);padding:0 0 .45em;border-bottom:1px solid rgba(225,201,169,.6);margin:0 0 1.1rem}
-.hero .rail{margin-bottom:1.5rem}
-.hero-next{margin:0 0 1.5rem}
-.hero-kicker{font-family:'Tenor Sans',serif;text-transform:uppercase;letter-spacing:.2em;font-size:.78rem;color:var(--sand);margin:0 0 .4em}
-.hero-next-title{font-family:'Tenor Sans',serif;font-size:clamp(1.12rem,2.1vw,1.45rem);line-height:1.25;margin:0;color:var(--parchment)}
-@media (max-width:760px){.hero .rail{letter-spacing:.16em;font-size:.8rem}.hero .btns{gap:10px;flex-wrap:wrap}.hero .btns .btn{padding:1.05em 1.05em;font-size:.86rem}}
+@media (max-width:760px){.hero .btns{gap:10px;flex-wrap:wrap}.hero .btns .btn{padding:1.05em 1.05em;font-size:.86rem}}
+/* Next Sunday callout (20261111b): parchment panel over the lower edge of the hero; dates and title switch by script */
+.hero .in{padding-bottom:calc(72px + 48px)}
+.next-call{position:relative;z-index:2;margin-top:-56px}
+.nc-in{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px 40px;background:var(--parchment);border:1px solid rgba(200,160,136,.55);border-radius:14px;box-shadow:0 10px 30px rgba(64,24,16,.14);padding:22px 30px}
+.nc-kicker{font-family:'Tenor Sans',serif;text-transform:uppercase;letter-spacing:.2em;font-size:.78rem;color:var(--rust);margin:0 0 .35em}
+.nc-title{font-family:'Tenor Sans',serif;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.25;color:var(--rust6);margin:0}
+.nc-title #hn-date{display:block;font-size:clamp(1.5rem,2.8vw,2rem);color:var(--bark);margin-bottom:.1em}
+.nc-dates{font-family:'Tenor Sans',serif;text-transform:uppercase;letter-spacing:.14em;font-size:.86rem;color:var(--rust);margin:0;display:flex;flex-wrap:wrap;gap:6px 18px}
+.nc-dates span{padding-bottom:3px;border-bottom:1px solid transparent}
+.nc-dates .past{text-decoration:line-through;opacity:.6}
+.nc-dates .now{color:var(--bark);border-bottom-color:var(--bark)}
+.next-call + .sec{padding-top:clamp(44px,6vw,72px)}
+@media (max-width:760px){.hero{min-height:0}.hero .in{padding-top:64px;padding-bottom:calc(56px + 36px)}.next-call{margin-top:-40px}.nc-in{padding:18px 20px}.nc-dates{gap:6px 14px;font-size:.8rem}}

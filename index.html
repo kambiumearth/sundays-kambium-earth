@@ -37,7 +37,7 @@ gtag('js',new Date());gtag('config','G-C5XQDPP2Z3');
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261111a">
+<link rel="stylesheet" href="style.css?v=20261112a">
 </head>
 <body>
 
@@ -71,17 +71,23 @@ gtag('js',new Date());gtag('config','G-C5XQDPP2Z3');
     <h1>Wilderness Skills <em>Community Sundays</em></h1>
     <p class="hero-place"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Sintra · Colares, Portugal</p>
     <p class="one">Six winter Sundays on Sintra Mountain, 10:30 to 16:30, for all ages.</p>
-    <p class="rail">29&nbsp;Nov<i>•</i>&#8203;13&nbsp;Dec<i>•</i>&#8203;17&nbsp;Jan<i>•</i>&#8203;14&nbsp;Feb<i>•</i>&#8203;7&nbsp;Mar<i>•</i>&#8203;18&nbsp;Apr</p>
-    <div class="hero-next" id="hero-next">
-      <p class="hero-kicker">Next Sunday</p>
-      <p class="hero-next-title"><span id="hn-date">Sun 29 Nov</span> · <span id="hn-title">Preparing for Winter: Wood, Fire and Acorns</span></p>
-    </div>
     <div class="btns">
       <a class="btn light" id="hn-btn" href="https://events.kambium.earth/checkout/new-session/id/9314775/chk/a66d615f0cc90706e5b39bc8201bd95f/">Book Sun 29 Nov →</a>
       <a class="btn ghost" id="hn-arc" href="#join">All six Sundays</a>
     </div>
   </div>
 </section>
+<aside class="next-call" aria-label="Next Sunday">
+  <div class="wrap">
+    <div class="nc-in">
+      <div class="nc-main">
+        <p class="nc-kicker">Next Sunday</p>
+        <p class="nc-title"><span id="hn-date">Sun 29 Nov</span> <span id="hn-title">Preparing for Winter: Wood, Fire and Acorns</span></p>
+      </div>
+      <p class="nc-dates" id="hn-dates"><span>29&nbsp;Nov</span><span>13&nbsp;Dec</span><span>17&nbsp;Jan</span><span>14&nbsp;Feb</span><span>7&nbsp;Mar</span><span>18&nbsp;Apr</span></p>
+    </div>
+  </div>
+</aside>
 <script>
 /* Sundays hero: shows the next Sunday. Dates and titles match Ticket Tailor es_2482274. */
 (function(){
@@ -95,10 +101,13 @@ gtag('js',new Date());gtag('config','G-C5XQDPP2Z3');
   for(var i=0;i<s.length;i++){if(new Date(s[i][0]).getTime()>now){n=s[i];break;}}
   var b=document.getElementById('hn-btn'),a=document.getElementById('hn-arc');
   if(now>new Date("2026-12-10T21:00:00Z").getTime()&&a){a.remove();}
-  if(!n){var x=document.getElementById('hero-next');if(x)x.remove();if(b){b.textContent='See the Sundays';b.href='#sundays';}return;}
+  var ds=document.querySelectorAll('#hn-dates span');
+  for(var j=0;j<ds.length;j++){ds[j].className=(n&&s[j]===n)?'now':(new Date(s[j][0]).getTime()<now?'past':'');}
+  if(!n){var x=document.querySelector('.next-call');if(x)x.remove();if(b){b.textContent='See the Sundays';b.href='#sundays';}return;}
   document.getElementById('hn-date').textContent=n[1];
   document.getElementById('hn-title').textContent=n[2];
   if(b)b.textContent='Book '+n[1]+' →';
+  document.addEventListener('DOMContentLoaded',function(){var mb=document.querySelector('.mobile-book');if(mb)mb.textContent='Book '+n[1];});
 })();
 </script>
 
